@@ -8,7 +8,7 @@ function PokemonPage() {
   const [collection, setCollection] = useState([]);
   const [query, setQuery] = useState("");
   const [newPokemon, setNewPokemon] = useState({
-    id: Math.max(...collection.map(pokemon => pokemon.id)) + 1,
+    id: 0,
     name: "MissingNo.",
     hp: 33,
     sprites : {
@@ -24,7 +24,7 @@ function PokemonPage() {
 
   function onNewPokemonSubmit(event){
     event.preventDefault();
-    setCollection([...collection, newPokemon]);
+    setCollection([...collection, {...newPokemon, id: Math.max(...collection.map(pokemon => pokemon.id)) + 1}]);
   }
 
   return (

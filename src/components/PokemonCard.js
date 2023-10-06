@@ -3,6 +3,12 @@ import { Card } from "semantic-ui-react";
 
 function PokemonCard({name, hp, front, back}) { 
   const [showBack, setShowBack] = useState(false);
+
+  // function myFunction() {
+  //   setShowBack(!showBack);
+  // }
+  // const timerId = setInterval(myFunction, 1000);
+
   return (
     <Card>
       <div onClick={() => setShowBack(!showBack)} >
